@@ -1,9 +1,7 @@
-// File: app/build.gradle.kts (Module level)
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)          // Đổi id("...") thành alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android) // Tương tự với hilt
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -59,19 +57,4 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    // Hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-
-    // Room [cite: 25, 121]
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    ksp(libs.room.compiler)
-
-    // Retrofit [cite: 25, 123]
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-
-    // WorkManager [cite: 122]
-    implementation(libs.androidx.work.runtime.ktx)
 }
