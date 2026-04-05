@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)          // Đổi id("...") thành alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android) // Tương tự với hilt
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -31,10 +32,7 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
+
     kotlinOptions {
         jvmTarget = "11"
     }
