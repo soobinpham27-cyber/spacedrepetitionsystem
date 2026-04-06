@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".SpacedRepetitionApp"
-        android:theme="@style/Theme.SpacedRepetitionSystem">
+        android:theme="@style/Theme.SpacedRepetitionSystem"
+        >
 
         <activity
             android:name=".MainActivity"

@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -61,7 +62,13 @@ dependencies {
 
     // Hilt (Sửa lỗi "no hilt-android dependency was found")
     implementation(libs.hilt.android)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.firestore)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Room Database
     implementation(libs.room.runtime)
@@ -77,6 +84,8 @@ dependencies {
 
     // Thư viện ViewModel cho Compose (giúp dùng được hàm viewModel())
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.1")
+    implementation("androidx.compose.material:material-icons-extended")
+
 
     // Testing
     testImplementation(libs.junit)
@@ -86,4 +95,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.androidx.navigation.compose)
 }
