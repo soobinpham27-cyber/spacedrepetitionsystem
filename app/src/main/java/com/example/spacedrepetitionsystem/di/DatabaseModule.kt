@@ -1,7 +1,5 @@
 package com.example.spacedrepetitionsystem.di
 
-package com.example.spacedrepetitionsystem.di
-
 import android.content.Context
 import androidx.room.Room
 import com.example.spacedrepetitionsystem.data.local.AppDatabase
@@ -25,7 +23,7 @@ object DatabaseModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "spaced_repetition_db"
+            "flashcard_db"
         ).build()
     }
 

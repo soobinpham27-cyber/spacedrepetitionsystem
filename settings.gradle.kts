@@ -1,12 +1,6 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -17,6 +11,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+}
+
+plugins {
+    // Dòng này giúp tự động tải Java 17 về cho bạn
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
 rootProject.name = "Spaced Repetition System"
