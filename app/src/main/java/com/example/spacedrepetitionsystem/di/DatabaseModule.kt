@@ -6,6 +6,7 @@ import com.example.spacedrepetitionsystem.data.local.AppDatabase
 import com.example.spacedrepetitionsystem.data.local.dao.FlashcardDao
 import com.example.spacedrepetitionsystem.data.repository.FlashcardRepositoryImpl
 import com.example.spacedrepetitionsystem.domain.repository.FlashcardRepository
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +25,9 @@ object DatabaseModule {
             context,
             AppDatabase::class.java,
             "flashcard_db"
-        ).build()
+        )
+            .fallbackToDestructiveMigration() // 🚀 QUAN TRỌNG: Để Room tự dọn dẹp lỗi ID cũ
+            .build()
     }
 
     @Provides
@@ -34,7 +37,16 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideFlashcardRepository(dao: FlashcardDao): FlashcardRepository {
-        return FlashcardRepositoryImpl(dao)
+    fun provideFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFlashcardRepository(
+        dao: FlashcardDao,
+        firestore: FirebaseFirestore
+    ): FlashcardRepository {
+        return FlashcardRepositoryImpl(dao, firestore)
     }
 }
