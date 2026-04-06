@@ -1,7 +1,5 @@
 package com.example.spacedrepetitionsystem.data.local.entity
 
-package com.example.spacedrepetitionsystem.data.local.entity
-
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.spacedrepetitionsystem.domain.model.Flashcard
