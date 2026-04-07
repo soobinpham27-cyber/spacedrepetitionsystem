@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "659314534023",
+    "project_id": "laptrinhdidong-723d3",
+    "storage_bucket": "laptrinhdidong-723d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659314534023:android:2efa59707c097d03ab3a22",
+        "android_client_info": {
+          "package_name": "com.example.spacedrepetitionsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2S5yYRwqLdK8YVZ83qriru1OzwUOUnk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
